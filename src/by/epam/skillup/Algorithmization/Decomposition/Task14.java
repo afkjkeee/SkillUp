@@ -12,7 +12,7 @@ public class Task14 {
 		String result = "";
 		for (int i = 1; i < segmentEnd; i++) {
 			if (sum(i) == i) {
-				result  = result + i + " ";
+				result = result + i + " ";
 			}
 		}
 
@@ -32,7 +32,7 @@ public class Task14 {
 		return sumResult;
 	}
 
-	public int numberLength(int a) {
+	private int numberLength(int a) {
 		int length = 0;
 		while (a >= 1) {
 			length++;
