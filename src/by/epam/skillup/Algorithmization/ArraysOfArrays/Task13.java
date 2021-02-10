@@ -2,10 +2,16 @@ package by.epam.skillup.Algorithmization.ArraysOfArrays;
 
 public class Task13 {
 	public static void main(String[] args) {
+		int[][] arr = { { 1, 17, 23, 6 }, { 3, 61, 34, 8 }, { 0, 13, 20, 4 } };
 
-		int[][] arr = { { 1, 17, 23, 6 }, 
-						{ 3, 61, 34, 8 }, 
-						{ 0, 13, 20, 4 } };
+		Task13 task13 = new Task13();
+		String result = task13.sortColumnsInAscendingAndDescendingOrder(arr);
+		System.out.println(result);
+	}
+
+	public String sortColumnsInAscendingAndDescendingOrder(int[][] arr) {
+		String ascendingColumns = "";
+		String decreasingColumns = "";
 
 		for (int j = 0; j < arr[0].length; j++) {
 			for (int i = 0; i < arr.length; i++) {
@@ -21,11 +27,10 @@ public class Task13 {
 		}
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
-				System.out.print(arr[i][j] + " ");
+				ascendingColumns += arr[i][j] + " ";
 			}
-			System.out.println();
+			ascendingColumns += "\n";
 		}
-		System.out.println();
 
 		for (int j = 0; j < arr[0].length; j++) {
 			for (int i = 0; i < arr.length; i++) {
@@ -41,9 +46,12 @@ public class Task13 {
 		}
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
-				System.out.print(arr[i][j] + " ");
+				decreasingColumns += arr[i][j] + " ";
 			}
-			System.out.println();
+			decreasingColumns += "\n";
 		}
+
+		return "Сортировка столбцов по возрастанию: \n" + ascendingColumns + "\nСортировка столбцоы по убыванию: \n"
+				+ decreasingColumns;
 	}
 }

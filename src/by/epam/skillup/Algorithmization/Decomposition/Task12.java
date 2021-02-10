@@ -9,9 +9,10 @@ public class Task12 {
 		String result = task12.numberFroTheSumOfDigits(3, 120);
 		System.out.println(result);
 	}
+
 	public String numberFroTheSumOfDigits(int K, int N) {
 		ArrayList<Integer> arr = new ArrayList<Integer>();
-		
+
 		for (int i = 0; i <= N; i++) {
 			int count = 0;
 			int z = i;

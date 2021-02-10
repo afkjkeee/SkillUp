@@ -6,9 +6,8 @@ public class Task1 {
 	public static void main(String[] args) {
 		int[] arrayOne = { 7, 2, 16, 33, 47, 59, 16 };
 		int[] arrayTwo = { 36, 11, 5, 87 };
-		int k = 4;
 		Task1 task1 = new Task1();
-		task1.insertArray(arrayOne, arrayTwo, k);
+		task1.insertArray(arrayOne, arrayTwo, 4);
 	}
 
 	public void insertArray(int[] firstArray, int[] secondArray, int insertPosition) {

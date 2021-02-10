@@ -1,32 +1,36 @@
 package by.epam.skillup.Algorithmization.OneDimensionalArrays;
 
+import java.util.Arrays;
+
 public class Task8 {
 	public static void main(String[] args) {
 		int[] arr = { 3, 4, 5, 9, 3, 8, 6 };
 
-		int min = 0;
+		Task8 task8 = new Task8();
+		String result = task8.arrayWithoutMinNumber(arr);
+		System.out.println(result);
+	}
 
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] < arr[min]) {
-				min = i;
-			}
-		}
+	public String arrayWithoutMinNumber(int[] arr) {
+		int min = Integer.MAX_VALUE;
 		int count = 0;
-
 		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] == arr[min]) {
+			if (arr[i] <= min) {
+				min = arr[i];
 				count++;
 			}
 		}
+
 		int[] newArray = new int[arr.length - count];
 
 		int k = 0;
 		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] != arr[min]) {
-				arr[i] = newArray[k];
+			if (arr[i] != min) {
+				newArray[k] = arr[i];
 				k++;
 			}
 		}
-		System.out.println(newArray[k]);
+
+		return Arrays.toString(newArray);
 	}
 }

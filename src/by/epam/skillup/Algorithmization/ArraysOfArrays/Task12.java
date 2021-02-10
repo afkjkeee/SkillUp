@@ -2,10 +2,16 @@ package by.epam.skillup.Algorithmization.ArraysOfArrays;
 
 public class Task12 {
 	public static void main(String[] args) {
+		int[][] arr = { { 1, 17, 23, 6 }, { 3, 61, 34, 8 }, { 0, 13, 20, 4 } };
 
-		int[][] arr = { { 1, 17, 23, 6 }, 
-						{ 3, 61, 34, 8 }, 
-						{ 0, 13, 20, 4 } };
+		Task12 task12 = new Task12();
+		String result = task12.sortStringsInAscendingAndDescendingOrder(arr);
+		System.out.println(result);
+	}
+
+	public String sortStringsInAscendingAndDescendingOrder(int[][] arr) {
+		String ascendingLines = "";
+		String decreasingLines = "";
 
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
@@ -17,12 +23,11 @@ public class Task12 {
 						arr[i][k] = b;
 					}
 				}
-				System.out.print(arr[i][j] + " ");
+				ascendingLines += arr[i][j] + " ";
 			}
-			System.out.println();
+			ascendingLines += "\n";
 		}
-		System.out.println();
-	
+
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
 
@@ -33,9 +38,12 @@ public class Task12 {
 						arr[i][k] = b;
 					}
 				}
-				System.out.print(arr[i][j] + " ");
+				decreasingLines += arr[i][j] + " ";
 			}
-			System.out.println();
+			decreasingLines += "\n";
 		}
+
+		return "Сортировка строк по возрастанию: \n" + ascendingLines + "\nСортировка строк по убыванию: \n"
+				+ decreasingLines;
 	}
 }

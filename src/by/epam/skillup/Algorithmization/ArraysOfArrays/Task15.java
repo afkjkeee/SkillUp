@@ -2,11 +2,14 @@ package by.epam.skillup.Algorithmization.ArraysOfArrays;
 
 public class Task15 {
 	public static void main(String[] args) {
+		int[][] arr = { { 2, 17, 23, 6 }, { 3, 61, 34, 8 }, { 0, 13, 20, 4 } };
+		Task15 task15 = new Task15();
+		String result = task15.replacingOddElementsWithMaximum(arr);
+		System.out.println(result);
+	}
 
-		int[][] arr = { { 2, 17, 23, 6 }, 
-						{ 3, 61, 34, 8 }, 
-						{ 0, 13, 20, 4 } };
-
+	public String replacingOddElementsWithMaximum(int[][] arr) {
+		String result = "";
 		int max = 0;
 
 		for (int i = 0; i < arr.length; i++) {
@@ -22,12 +25,13 @@ public class Task15 {
 					arr[i][j] = max;
 				}
 			}
-		}	
+		}
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
-				System.out.print(arr[i][j] + " ");
+				result = result + arr[i][j] + " ";
 			}
-			System.out.println();
+			result += "\n";
 		}
+		return result;
 	}
 }

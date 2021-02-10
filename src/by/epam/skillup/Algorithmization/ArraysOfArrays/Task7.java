@@ -1,10 +1,16 @@
 package by.epam.skillup.Algorithmization.ArraysOfArrays;
 
 public class Task7 {
-	public static void main(String[] args) {
+	private final int A1 = 2;
 
-		int n = 3;
-		int A1 = 2;
+	public static void main(String[] args) {
+		Task7 task7 = new Task7();
+		String result = task7.squareMatrixByAGivenRule(4);
+		System.out.println(result);
+	}
+
+	public String squareMatrixByAGivenRule(int n) {
+		String result = "";
 		int count = 0;
 
 		double[][] arr = new double[n][n];
@@ -19,10 +25,11 @@ public class Task7 {
 		}
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				System.out.print(arr[i][j] + " ");
+				result = result + arr[i][j] + " ";
 			}
-			System.out.println();
+			result += "\n";
 		}
-		System.out.println("Число положительных элементов в матрице: " + count);
+
+		return result + "\n" + "Число положительных элементов в матрице: " + count;
 	}
 }

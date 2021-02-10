@@ -2,10 +2,16 @@ package by.epam.skillup.Algorithmization.OneDimensionalArrays;
 
 public class Task9 {
 	public static void main(String[] args) {
-		int[] arr = { 1, 3, 16, 7, 3, 8, 16, 3, 16, 16 };
+		int[] arr = { 1, 3, 1, 3, 1, 16, 3, 16, 16 };
 
+		Task9 task9 = new Task9();
+		int result = task9.mosPopularNumber(arr);
+		System.out.println(result);
+	}
+
+	public int mosPopularNumber(int[] arr) {
 		int count2 = 0;
-		int count1 = 1;
+		int count1 = 0;
 		int pupular1 = 0;
 		int popular2 = 0;
 
@@ -24,6 +30,7 @@ public class Task9 {
 				popular2 = Math.min(popular2, pupular1);
 			}
 		}
-		System.out.println(popular2);
+
+		return popular2;
 	}
 }

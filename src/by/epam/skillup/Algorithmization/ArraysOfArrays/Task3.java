@@ -4,29 +4,32 @@ public class Task3 {
 	public static void main(String[] args) {
 
 		int[][] arr = { { 1, 3, 23, 17, 23 }, { 9, 6, 34, 77, 12 }, { 0, 1, 20, 64, 31 } };
+		Task3 task3 = new Task3();
+		String result = task3.printSelectedLineAndColumn(arr, 1, 3);
+		System.out.println(result);
 
-		int k = 1;
-		int p = 3;
+	}
 
-		System.out.print(k + "-я строка матрицы: ");
-
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr[i].length; j++) {
-				if (i == k) {
-					System.out.print(arr[k][j] + " ");
-				}
-			}
-			System.out.println();
-		}
-		System.out.println(p + "-й столбец матрицы: ");
+	public String printSelectedLineAndColumn(int[][] arr, int line, int column) {
+		String selectedLine = "";
+		String selectedColumn = "";
 
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
-				if (j == p) {
-					System.out.print(arr[i][p] + " ");
+				if (i == line) {
+					selectedLine = selectedLine + arr[line][j] + " ";
 				}
 			}
-			System.out.println();
 		}
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				if (j == column) {
+					selectedColumn = selectedColumn + arr[i][column] + " ";
+				}
+			}
+		}
+
+		return line + "-я строка матрицы: " + selectedLine + "\n" + column + "-й столбец матрицы: " + selectedColumn;
 	}
 }

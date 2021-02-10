@@ -2,10 +2,17 @@ package by.epam.skillup.Algorithmization.ArraysOfArrays;
 
 public class Task9 {
 	public static void main(String[] args) {
-
 		int[][] arr = { { 1, 17, 23, 6 }, { 3, 61, 34, 8 }, { 0, 13, 20, 4 } };
 
+		Task9 task9 = new Task9();
+		String result = task9.columnWithMaxSum(arr);
+		System.out.println(result);
+	}
+
+	public String columnWithMaxSum(int[][] arr) {
+		String result = "";
 		int maxSum = 0;
+		int columnIdWithMaxSum = 0;
 
 		for (int j = 0; j < arr[0].length; j++) {
 			int sum = 0;
@@ -15,10 +22,11 @@ public class Task9 {
 			}
 			if (sum > maxSum) {
 				maxSum = sum;
+				columnIdWithMaxSum = number;
 			}
-			System.out.println("Сумма чисел в столбце " + number + " равна - " + sum);
+			result = result + "Сумма чисел в столбце " + number + " равна - " + sum + "\n";
 		}
-		System.out.println();
-		System.out.print("Максимальной суммой является число - " + maxSum);
+
+		return result + "Столбец с максимальной суммой лементов - " + columnIdWithMaxSum;
 	}
 }

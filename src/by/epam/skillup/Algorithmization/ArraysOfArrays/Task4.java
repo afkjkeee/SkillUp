@@ -2,11 +2,15 @@ package by.epam.skillup.Algorithmization.ArraysOfArrays;
 
 public class Task4 {
 	public static void main(String[] args) {
+		Task4 task4 = new Task4();
+		String result = task4.squareMatrixByPattern(4);
+		System.out.println(result);
+	}
 
-		int n = 4;
-		int max = n;
-
+	public String squareMatrixByPattern(int n) {
+		String result = "";
 		int[][] arr = new int[n][n];
+		int max = n;
 
 		for (int i = 0; i < n; i++) {
 			if (i % 2 == 0) {
@@ -21,11 +25,14 @@ public class Task4 {
 				max = n;
 			}
 		}
+
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				System.out.print(arr[i][j] + " ");
+				result = result + arr[i][j] + " ";
 			}
-			System.out.println();
+			result += "\n";
 		}
+
+		return result;
 	}
 }
