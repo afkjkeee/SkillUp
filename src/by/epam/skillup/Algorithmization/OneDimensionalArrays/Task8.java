@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Task8 {
 	public static void main(String[] args) {
-		int[] arr = { 3, 4, 5, 9, 3, 8, 6 };
+		int[] arr = { 8, 3, 5, 9, 3, 8, 3 };
 
 		Task8 task8 = new Task8();
 		String result = task8.arrayWithoutMinNumber(arr);
@@ -15,8 +15,10 @@ public class Task8 {
 		int min = Integer.MAX_VALUE;
 		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] <= min) {
+			if (arr[i] < min) {
 				min = arr[i];
+				count = 1;
+			} else if (arr[i] == min) {
 				count++;
 			}
 		}

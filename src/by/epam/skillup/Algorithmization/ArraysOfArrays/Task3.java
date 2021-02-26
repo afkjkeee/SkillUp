@@ -5,7 +5,7 @@ public class Task3 {
 
 		int[][] arr = { { 1, 3, 23, 17, 23 }, { 9, 6, 34, 77, 12 }, { 0, 1, 20, 64, 31 } };
 		Task3 task3 = new Task3();
-		String result = task3.printSelectedLineAndColumn(arr, 1, 3);
+		String result = task3.printSelectedLineAndColumn(arr, 3, 3);
 		System.out.println(result);
 
 	}
@@ -16,16 +16,16 @@ public class Task3 {
 
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
-				if (i == line) {
-					selectedLine = selectedLine + arr[line][j] + " ";
+				if (i == (line - 1)) {
+					selectedLine = selectedLine + arr[line - 1][j] + " ";
 				}
 			}
 		}
 
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
-				if (j == column) {
-					selectedColumn = selectedColumn + arr[i][column] + " ";
+				if (j == (column - 1)) {
+					selectedColumn = selectedColumn + arr[i][column - 1] + " ";
 				}
 			}
 		}

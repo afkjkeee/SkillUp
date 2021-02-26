@@ -12,23 +12,14 @@ public class Task3 {
 	}
 
 	public void sort(int[] arr) {
-		boolean isSorted;
-		for (int i = 0; i < arr.length - 1; i++) {
-			isSorted = true;
-			for (int j = 0; j < arr.length - 1 - i; j++) {
+		for (int i = arr.length - 1; i > 0; i--) {
+			for (int j = 0; j < i; j++) {
 				if (arr[j] > arr[j + 1]) {
-					swap(arr, j, j + 1);
-					isSorted = false;
+					int tmp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = tmp;
 				}
 			}
-			if (isSorted)
-				return;
 		}
-	}
-
-	public static void swap(int[] arr, int i, int j) {
-		int temp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = temp;
 	}
 }

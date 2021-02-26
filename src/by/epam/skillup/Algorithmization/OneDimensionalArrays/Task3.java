@@ -17,11 +17,9 @@ public class Task3 {
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] < 0) {
 				countNegative++;
-			}
-			if (arr[i] > 0) {
+			} else if (arr[i] > 0) {
 				countPositive++;
-			}
-			if (arr[i] == 0) {
+			} else {
 				countNeutral++;
 			}
 		}

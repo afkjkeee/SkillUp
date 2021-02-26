@@ -27,6 +27,6 @@ public class Task9 {
 			result = result + "Сумма чисел в столбце " + number + " равна - " + sum + "\n";
 		}
 
-		return result + "Столбец с максимальной суммой лементов - " + columnIdWithMaxSum;
+		return result + "Столбец с максимальной суммой элементов - " + columnIdWithMaxSum;
 	}
 }
